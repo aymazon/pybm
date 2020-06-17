@@ -1,96 +1,87 @@
 # -*- coding: utf-8 -*-
 # flake8: noqa
 from __future__ import absolute_import, division, print_function, unicode_literals
-__all__ = ['absolute_import', 'division', 'print_function', 'unicode_literals']
-
+__all__ = ["absolute_import", "division", "print_function", "unicode_literals"]
 
 import platform
 import multiprocessing
-if platform.system() == 'Linux':
+if platform.system() == "Linux":
     try:
-        multiprocessing.set_start_method('forkserver')
+        multiprocessing.set_start_method("forkserver")
     except RuntimeError:
         pass
-
 
 import typing as t
 import pyrsistent.typing as tp
 from abc import ABCMeta, abstractmethod
-__all__.extend(['t', 'tp', 'ABCMeta', 'abstractmethod'])
-
+__all__.extend(["t", "tp", "ABCMeta", "abstractmethod"])
 
 import string, os, sys, re, datetime, calendar, collections, heapq, bisect, array, types, copy, enum, decimal, random, glob, shutil, pickle, sqlite3, zlib, gzip, bz2, zipfile, tarfile, csv, configparser, hashlib, io, time, argparse, logging, logging.config, platform, ctypes, threading, multiprocessing, subprocess, queue, socket, asyncio, signal, mmap, json, base64, binhex, binascii, html, xml, webbrowser, urllib, http, ftplib, poplib, imaplib, nntplib, smtplib, telnetlib, uuid, socketserver, xmlrpc, ipaddress, gettext, locale, cmd, doctest, unittest, warnings, abc, gc, inspect, traceback, importlib, math
 import six, gevent, pykka, Pyro4, celery, redis, mock, cffi, cython, cython as cy, ipdb, psutil, requests, redis_lock
 
 __all__.extend([
-    'string', 'os', 'sys', 're', 'datetime', 'calendar', 'collections',
-    'heapq', 'bisect', 'array', 'types', 'copy', 'enum', 'decimal', 'random',
-    'glob', 'shutil', 'pickle', 'sqlite3', 'zlib', 'gzip', 'bz2', 'zipfile',
-    'tarfile', 'csv', 'configparser', 'hashlib', 'io', 'time', 'argparse',
-    'logging', 'platform', 'ctypes', 'threading', 'multiprocessing',
-    'subprocess', 'queue', 'socket', 'asyncio', 'signal', 'mmap', 'json',
-    'base64', 'binhex', 'binascii', 'html', 'xml', 'webbrowser', 'urllib',
-    'http', 'ftplib', 'poplib', 'imaplib', 'nntplib', 'smtplib', 'telnetlib',
-    'uuid', 'socketserver', 'xmlrpc', 'ipaddress', 'gettext', 'locale', 'cmd',
-    'doctest', 'unittest', 'warnings', 'abc', 'gc', 'inspect', 'traceback',
-    'importlib', 'math', 'six', 'gevent', 'pykka', 'Pyro4', 'celery', 'redis',
-    'redis_lock', 'mock', 'cffi', 'cython', 'cy', 'ipdb', 'psutil', 'requests'
+    "string", "os", "sys", "re", "datetime", "calendar", "collections",
+    "heapq", "bisect", "array", "types", "copy", "enum", "decimal", "random",
+    "glob", "shutil", "pickle", "sqlite3", "zlib", "gzip", "bz2", "zipfile",
+    "tarfile", "csv", "configparser", "hashlib", "io", "time", "argparse",
+    "logging", "platform", "ctypes", "threading", "multiprocessing",
+    "subprocess", "queue", "socket", "asyncio", "signal", "mmap", "json",
+    "base64", "binhex", "binascii", "html", "xml", "webbrowser", "urllib",
+    "http", "ftplib", "poplib", "imaplib", "nntplib", "smtplib", "telnetlib",
+    "uuid", "socketserver", "xmlrpc", "ipaddress", "gettext", "locale", "cmd",
+    "doctest", "unittest", "warnings", "abc", "gc", "inspect", "traceback",
+    "importlib", "math", "six", "gevent", "pykka", "Pyro4", "celery", "redis",
+    "redis_lock", "mock", "cffi", "cython", "cy", "ipdb", "psutil", "requests"
 ])
 
 try:
     import syslog, fcntl
-    __all__.extend(['syslog', 'fcntl'])
+    __all__.extend(["syslog", "fcntl"])
 except ImportError:
     pass
 
-
 from functools import update_wrapper, wraps, WRAPPER_ASSIGNMENTS, WRAPPER_UPDATES, total_ordering, cmp_to_key, lru_cache, reduce, partial, partialmethod, singledispatch
 __all__.extend([
-    'update_wrapper', 'wraps', 'WRAPPER_ASSIGNMENTS', 'WRAPPER_UPDATES',
-    'total_ordering', 'cmp_to_key', 'lru_cache', 'reduce', 'partial',
-    'partialmethod', 'singledispatch'
+    "update_wrapper", "wraps", "WRAPPER_ASSIGNMENTS", "WRAPPER_UPDATES",
+    "total_ordering", "cmp_to_key", "lru_cache", "reduce", "partial",
+    "partialmethod", "singledispatch"
 ])
-
 
 from operator import abs, add, and_, attrgetter, concat, contains, countOf, delitem, eq, floordiv, ge, getitem, gt, iadd, iand, iconcat, ifloordiv, ilshift, imatmul, imod, imul, index, indexOf, inv, invert, ior, ipow, irshift, is_, is_not, isub, itemgetter, itruediv, ixor, le, length_hint, lshift, lt, matmul, methodcaller, mod, mul, ne, neg, not_, or_, pos, pow, rshift, setitem, sub, truediv, truth, xor
 __all__.extend([
-    'abs', 'add', 'and_', 'attrgetter', 'concat', 'contains', 'countOf',
-    'delitem', 'eq', 'floordiv', 'ge', 'getitem', 'gt', 'iadd', 'iand',
-    'iconcat', 'ifloordiv', 'ilshift', 'imatmul', 'imod', 'imul', 'index',
-    'indexOf', 'inv', 'invert', 'ior', 'ipow', 'irshift', 'is_', 'is_not',
-    'isub', 'itemgetter', 'itruediv', 'ixor', 'le', 'length_hint', 'lshift',
-    'lt', 'matmul', 'methodcaller', 'mod', 'mul', 'ne', 'neg', 'not_', 'or_',
-    'pos', 'pow', 'rshift', 'setitem', 'sub', 'truediv', 'truth', 'xor'
+    "abs", "add", "and_", "attrgetter", "concat", "contains", "countOf",
+    "delitem", "eq", "floordiv", "ge", "getitem", "gt", "iadd", "iand",
+    "iconcat", "ifloordiv", "ilshift", "imatmul", "imod", "imul", "index",
+    "indexOf", "inv", "invert", "ior", "ipow", "irshift", "is_", "is_not",
+    "isub", "itemgetter", "itruediv", "ixor", "le", "length_hint", "lshift",
+    "lt", "matmul", "methodcaller", "mod", "mul", "ne", "neg", "not_", "or_",
+    "pos", "pow", "rshift", "setitem", "sub", "truediv", "truth", "xor"
 ])
-
 
 from itertools import count, cycle, repeat, accumulate, chain, compress, dropwhile, filterfalse, groupby, islice, starmap, takewhile, tee, zip_longest, product, permutations, combinations, combinations_with_replacement
 __all__.extend([
-    'count', 'cycle', 'repeat', 'accumulate', 'chain', 'compress', 'dropwhile',
-    'filterfalse', 'groupby', 'islice', 'starmap', 'takewhile', 'tee',
-    'zip_longest', 'product', 'permutations', 'combinations',
-    'combinations_with_replacement'
+    "count", "cycle", "repeat", "accumulate", "chain", "compress", "dropwhile",
+    "filterfalse", "groupby", "islice", "starmap", "takewhile", "tee",
+    "zip_longest", "product", "permutations", "combinations",
+    "combinations_with_replacement"
 ])
-
 
 from collections import deque, defaultdict, namedtuple, UserDict, UserList, UserString, Counter, OrderedDict, ChainMap
 __all__.extend([
-    'deque', 'defaultdict', 'namedtuple', 'UserDict', 'UserList', 'UserString',
-    'Counter', 'OrderedDict', 'ChainMap'
+    "deque", "defaultdict", "namedtuple", "UserDict", "UserList", "UserString",
+    "Counter", "OrderedDict", "ChainMap"
 ])
 
-
-from pyrsistent import pmap, m, PMap, pvector, v, PVector, pset, s, PSet, pbag, b, PBag, plist, l, PList, pdeque, dq, PDeque, CheckedPMap, CheckedPVector, CheckedPSet, InvariantException, CheckedKeyTypeError, CheckedValueTypeError, CheckedType, optional, PRecord, field, pset_field, pmap_field, pvector_field, PClass, PClassMeta, immutable, freeze, thaw, mutant, get_in, inc, discard, rex, ny  # type: ignore
+from pyrsistent import pmap, m as pm, PMap, pvector, v as pv, PVector, pset, s as ps, PSet, pbag, b as pb, PBag, plist, l as pl, PList, pdeque, dq as pdq, PDeque, CheckedPMap, CheckedPVector, CheckedPSet, InvariantException, CheckedKeyTypeError, CheckedValueTypeError, CheckedType, optional, PRecord, field as pfield, pset_field, pmap_field, pvector_field, PClass, PClassMeta, immutable, freeze, thaw, mutant, get_in, inc, discard, rex, ny  # type: ignore
 __all__.extend([
-    'pmap', 'm', 'PMap', 'pvector', 'v', 'PVector', 'pset', 's', 'PSet',
-    'pbag', 'b', 'PBag', 'plist', 'l', 'PList', 'pdeque', 'dq', 'PDeque',
-    'CheckedPMap', 'CheckedPVector', 'CheckedPSet', 'InvariantException',
-    'CheckedKeyTypeError', 'CheckedValueTypeError', 'CheckedType', 'optional',
-    'PRecord', 'field', 'pset_field', 'pmap_field', 'pvector_field', 'PClass',
-    'PClassMeta', 'immutable', 'freeze', 'thaw', 'mutant', 'get_in', 'inc',
-    'discard', 'rex', 'ny'
+    "pmap", "pm", "PMap", "pvector", "pv", "PVector", "pset", "ps", "PSet",
+    "pbag", "pb", "PBag", "plist", "pl", "PList", "pdeque", "pdq", "PDeque",
+    "CheckedPMap", "CheckedPVector", "CheckedPSet", "InvariantException",
+    "CheckedKeyTypeError", "CheckedValueTypeError", "CheckedType", "optional",
+    "PRecord", "pfield", "pset_field", "pmap_field", "pvector_field", "PClass",
+    "PClassMeta", "immutable", "freeze", "thaw", "mutant", "get_in", "inc",
+    "discard", "rex", "ny"
 ])
-
 
 from fn.monad import Option, Full, Empty, optionable
 from fn.op import apply, call, zipwith, foldl, foldr, unfold
@@ -100,18 +91,17 @@ from fn.iters import padnone, ncycles, repeatfunc, consume
 from fn.iters import partition as splitin, splitat, splitby
 from fn.iters import powerset, pairwise, iter_except, flatten
 __all__.extend([
-    'Option', 'Full', 'Empty', 'optionable', 'apply', 'call',
-    'zipwith', 'foldl', 'foldr', 'unfold', 'Stream', 'tco', 'padnone',
-    'ncycles', 'repeatfunc', 'consume', 'splitin', 'splitat', 'splitby',
-    'powerset', 'pairwise', 'iter_except', 'flatten'
+    "Option", "Full", "Empty", "optionable", "apply", "call", "zipwith",
+    "foldl", "foldr", "unfold", "Stream", "tco", "padnone", "ncycles",
+    "repeatfunc", "consume", "splitin", "splitat", "splitby", "powerset",
+    "pairwise", "iter_except", "flatten"
 ])
-
 
 from toolz import remove, accumulate, groupby, merge_sorted, interleave, unique, isiterable, isdistinct, take, drop, take_nth, first, second, nth, last, get, concat, concatv, mapcat, cons, interpose, frequencies, reduceby, iterate, sliding_window, partition, partition_all, count as count_seq, pluck, join, tail, diff, topk, peek, peekn, random_sample, identity, apply, thread_first, thread_last, memoize, compose, compose_left, pipe, complement, juxt, do, curry, excepts, merge, merge_with, valmap, keymap, itemmap, valfilter, keyfilter, itemfilter, assoc, dissoc, assoc_in, update_in, get_in, countby, partitionby, comp, curried as c  # type: ignore
 from toolz.sandbox import EqualityHashKey, unzip
 from toolz.curried import operator as co
 import platform
-if platform.python_implementation() == 'CPython':
+if platform.python_implementation() == "CPython":
     try:
         from cytoolz import remove, accumulate, groupby, merge_sorted, interleave, unique, isiterable, isdistinct, take, drop, take_nth, first, second, nth, last, get, concat, concatv, mapcat, cons, interpose, frequencies, reduceby, iterate, sliding_window, partition, partition_all, count as count_seq, pluck, join, tail, diff, topk, peek, peekn, random_sample, identity, apply, thread_first, thread_last, memoize, compose, compose_left, pipe, complement, juxt, do, curry, excepts, merge, merge_with, valmap, keymap, itemmap, valfilter, keyfilter, itemfilter, assoc, dissoc, assoc_in, update_in, get_in, countby, partitionby, comp, curried as c  # type: ignore
         from cytoolz.curried import operator as co
@@ -132,56 +122,66 @@ c.splitat = curry(splitat)
 c.splitby = curry(splitby)
 c.iter_except = curry(iter_except)
 
-
 __all__.extend([
-    'remove', 'accumulate', 'groupby', 'merge_sorted', 'interleave', 'unique',
-    'isiterable', 'isdistinct', 'take', 'drop', 'take_nth', 'first', 'second',
-    'nth', 'last', 'get', 'concat', 'concatv', 'mapcat', 'cons', 'interpose',
-    'frequencies', 'reduceby', 'iterate', 'sliding_window', 'partition',
-    'partition_all', 'count_seq', 'pluck', 'join', 'tail', 'diff', 'topk', 'peek',
-    'peekn', 'random_sample', 'identity', 'apply', 'thread_first',
-    'thread_last', 'memoize', 'compose', 'compose_left', 'pipe', 'complement',
-    'juxt', 'do', 'curry', 'excepts', 'merge', 'merge_with', 'valmap',
-    'keymap', 'itemmap', 'valfilter', 'keyfilter', 'itemfilter', 'assoc',
-    'dissoc', 'assoc_in', 'update_in', 'get_in', 'countby', 'partitionby',
-    'comp', 'c', 'co', 'EqualityHashKey', 'unzip'
+    "remove", "accumulate", "groupby", "merge_sorted", "interleave", "unique",
+    "isiterable", "isdistinct", "take", "drop", "take_nth", "first", "second",
+    "nth", "last", "get", "concat", "concatv", "mapcat", "cons", "interpose",
+    "frequencies", "reduceby", "iterate", "sliding_window", "partition",
+    "partition_all", "count_seq", "pluck", "join", "tail", "diff", "topk",
+    "peek", "peekn", "random_sample", "identity", "apply", "thread_first",
+    "thread_last", "memoize", "compose", "compose_left", "pipe", "complement",
+    "juxt", "do", "curry", "excepts", "merge", "merge_with", "valmap",
+    "keymap", "itemmap", "valfilter", "keyfilter", "itemfilter", "assoc",
+    "dissoc", "assoc_in", "update_in", "get_in", "countby", "partitionby",
+    "comp", "c", "co", "EqualityHashKey", "unzip"
 ])
 
+PY35 = sys.version_info[0] == 3 and sys.version_info[1] == 5
+PY36 = sys.version_info[0] == 3 and sys.version_info[1] == 6
+PY37 = sys.version_info[0] == 3 and sys.version_info[1] == 7
+PY38 = sys.version_info[0] == 3 and sys.version_info[1] == 8
 from toolz.compatibility import map, filter, range, zip, reduce, zip_longest, iteritems, iterkeys, itervalues, filterfalse, PY3, PY34, PYPY  # type: ignore
 __all__.extend([
-    'map', 'filter', 'range', 'zip', 'reduce', 'zip_longest', 'iteritems',
-    'iterkeys', 'itervalues', 'filterfalse', 'PY3', 'PY34', 'PYPY'
+    "map", "filter", "range", "zip", "reduce", "zip_longest", "iteritems",
+    "iterkeys", "itervalues", "filterfalse", "PY3", "PY34", "PY35", "PY36",
+    "PY37", "PY38", "PYPY"
 ])
+
+try:
+    from dataclasses import dataclass, field
+    __all__.extend(["dataclass", "field"])
+except ImportError:
+    pass
 
 from functoolsex import flip, F, FF, X, op_filter, op_map, op_or_else, op_or_call, op_get_or, op_get_or_call, R, fold, is_none, is_not_none, is_option_full, is_option_empty, uppack_args, combinations_with_replacement, compress, every, first_object, first_option_full, first_pred_object, first_true, getter, laccumulate, lchain, lcombinations, lcombinations_with_replacement, lcompact, lcompress, lconcat, lconcatv, lcons, lcycle, ldiff, ldrop, ldropwhile, lfilter, lfilterfalse, lflatten, lgrouper, linterleave, linterpose, lislice, liter_except, lmap, lmapcat, lmerge_sorted, lncycles, lpairwise, lpartition, lpartition_all, lpermutations, lpluck, ljoin, lpowerset, lproduct, lrandom_sample, lpartitionby, lrange, lreject, lremove, lrepeat, lrepeatfunc, lrest, lroundrobin, lsliding_window, lsplitat, lsplitby, lsplitin, lstarmap, ltail, ltake, ltake_nth, ltakewhile, ltee, ltopk, lunique, lzip, lzip_longest, taccumulate, tchain, tcombinations, tcombinations_with_replacement, tcompact, tcompress, tconcat, tconcatv, tcons, tcycle, tdiff, tdrop, tdropwhile, tfilter, tfilterfalse, tflatten, tgrouper, tinterleave, tinterpose, tislice, titer_except, tmap, tmapcat, tmerge_sorted, tncycles, tpairwise, tpartition, tpartition_all, tpermutations, tpluck, tjoin, tpowerset, tproduct, trandom_sample, tpartitionby, trange, treject, tremove, trepeat, trepeatfunc, trest, troundrobin, tsliding_window, tsplitat, tsplitby, tsplitin, tstarmap, ttail, ttake, ttake_nth, ttakewhile, ttee, ttopk, tunique, tzip, tzip_longest, some, tco_yield  # type: ignore
 
 __all__.extend([
-    'flip', 'F', 'FF', 'X', 'R', 'fold', 'op_filter', 'op_map', 'op_or_else',
-    'op_or_call', 'op_get_or', 'op_get_or_call', 'is_none', 'is_not_none',
-    'is_option_full', 'is_option_empty', 'uppack_args',
-    'combinations_with_replacement', 'compress', 'every', 'first_object',
-    'first_option_full', 'first_pred_object', 'first_true', 'getter',
-    'laccumulate', 'lchain', 'lcombinations', 'lcombinations_with_replacement',
-    'lcompact', 'lcompress', 'lconcat', 'lconcatv', 'lcons', 'lcycle', 'ldiff',
-    'ldrop', 'ldropwhile', 'lfilter', 'lfilterfalse', 'lflatten', 'lgrouper',
-    'linterleave', 'linterpose', 'lislice', 'liter_except', 'lmap', 'lmapcat',
-    'lmerge_sorted', 'lncycles', 'lpairwise', 'lpartition', 'lpartition_all',
-    'lpermutations', 'lpluck', 'ljoin', 'lpowerset', 'lproduct',
-    'lrandom_sample', 'lpartitionby', 'lrange', 'lreject', 'lremove',
-    'lrepeat', 'lrepeatfunc', 'lrest', 'lroundrobin', 'lsliding_window',
-    'lsplitat', 'lsplitby', 'lsplitin', 'lstarmap', 'ltail', 'ltake',
-    'ltake_nth', 'ltakewhile', 'ltee', 'ltopk', 'lunique', 'lzip',
-    'lzip_longest', 'taccumulate', 'tchain', 'tcombinations',
-    'tcombinations_with_replacement', 'tcompact', 'tcompress', 'tconcat',
-    'tconcatv', 'tcons', 'tcycle', 'tdiff', 'tdrop', 'tdropwhile', 'tfilter',
-    'tfilterfalse', 'tflatten', 'tgrouper', 'tinterleave', 'tinterpose',
-    'tislice', 'titer_except', 'tmap', 'tmapcat', 'tmerge_sorted', 'tncycles',
-    'tpairwise', 'tpartition', 'tpartition_all', 'tpermutations', 'tpluck',
-    'tjoin', 'tpowerset', 'tproduct', 'trandom_sample', 'tpartitionby',
-    'trange', 'treject', 'tremove', 'trepeat', 'trepeatfunc', 'trest',
-    'troundrobin', 'tsliding_window', 'tsplitat', 'tsplitby', 'tsplitin',
-    'tstarmap', 'ttail', 'ttake', 'ttake_nth', 'ttakewhile', 'ttee', 'ttopk',
-    'tunique', 'tzip', 'tzip_longest', 'some', 'tco_yield'
+    "flip", "F", "FF", "X", "R", "fold", "op_filter", "op_map", "op_or_else",
+    "op_or_call", "op_get_or", "op_get_or_call", "is_none", "is_not_none",
+    "is_option_full", "is_option_empty", "uppack_args",
+    "combinations_with_replacement", "compress", "every", "first_object",
+    "first_option_full", "first_pred_object", "first_true", "getter",
+    "laccumulate", "lchain", "lcombinations", "lcombinations_with_replacement",
+    "lcompact", "lcompress", "lconcat", "lconcatv", "lcons", "lcycle", "ldiff",
+    "ldrop", "ldropwhile", "lfilter", "lfilterfalse", "lflatten", "lgrouper",
+    "linterleave", "linterpose", "lislice", "liter_except", "lmap", "lmapcat",
+    "lmerge_sorted", "lncycles", "lpairwise", "lpartition", "lpartition_all",
+    "lpermutations", "lpluck", "ljoin", "lpowerset", "lproduct",
+    "lrandom_sample", "lpartitionby", "lrange", "lreject", "lremove",
+    "lrepeat", "lrepeatfunc", "lrest", "lroundrobin", "lsliding_window",
+    "lsplitat", "lsplitby", "lsplitin", "lstarmap", "ltail", "ltake",
+    "ltake_nth", "ltakewhile", "ltee", "ltopk", "lunique", "lzip",
+    "lzip_longest", "taccumulate", "tchain", "tcombinations",
+    "tcombinations_with_replacement", "tcompact", "tcompress", "tconcat",
+    "tconcatv", "tcons", "tcycle", "tdiff", "tdrop", "tdropwhile", "tfilter",
+    "tfilterfalse", "tflatten", "tgrouper", "tinterleave", "tinterpose",
+    "tislice", "titer_except", "tmap", "tmapcat", "tmerge_sorted", "tncycles",
+    "tpairwise", "tpartition", "tpartition_all", "tpermutations", "tpluck",
+    "tjoin", "tpowerset", "tproduct", "trandom_sample", "tpartitionby",
+    "trange", "treject", "tremove", "trepeat", "trepeatfunc", "trest",
+    "troundrobin", "tsliding_window", "tsplitat", "tsplitby", "tsplitin",
+    "tstarmap", "ttail", "ttake", "ttake_nth", "ttakewhile", "ttee", "ttopk",
+    "tunique", "tzip", "tzip_longest", "some", "tco_yield"
 ])
 
 c.uppack_args = curry(uppack_args)
@@ -263,72 +263,71 @@ c.tsplitby = curry(tsplitby)
 c.titer_except = curry(titer_except)
 
 from pprintpp import pprint as pp
-__all__.extend(['pp'])
+__all__.extend(["pp"])
 
 from pysnooper import snoop
-__all__.extend(['snoop'])
+__all__.extend(["snoop"])
 
 try:
     import cProfile
     import pstats
-    __all__.extend(['cProfile', 'pstats'])
+    __all__.extend(["cProfile", "pstats"])
 except ImportError:
     pass
 
 import pprofile
-__all__.extend(['pprofile'])
+__all__.extend(["pprofile"])
 
 try:
     import pyximport
     pyximport.install(reload_support=True, language_level=3)
-    __all__.extend(['pyximport'])
+    __all__.extend(["pyximport"])
 except ImportError:
     pass
 
 try:
     import numpy as np
     from numpy import nan, nan as NA
-    __all__.extend(['np', 'nan', 'NA'])
+    __all__.extend(["np", "nan", "NA"])
 except ImportError:
     pass
 
 try:
     import pandas as pd
     pd.options.display.max_rows = 10
-    __all__.extend(['pd'])
+    __all__.extend(["pd"])
 except ImportError:
     pass
 
 try:
     import matplotlib.pyplot as plt
-    __all__.extend(['plt'])
+    __all__.extend(["plt"])
 except ImportError:
     pass
 
 from mock import Mock, MagicMock, PropertyMock
 
 from pytest_mock import MockFixture
-__all__.extend(['MockFixture'])
+__all__.extend(["MockFixture"])
 
 from pykka import ThreadingActor, ActorProxy, ThreadingFuture
-__all__.extend(['ThreadingActor', 'ActorProxy', 'ThreadingFuture'])
+__all__.extend(["ThreadingActor", "ActorProxy", "ThreadingFuture"])
 
+PROJECT_NAME = os.environ.get("PROJECT_NAME", "project")
+APP_NAME = os.environ.get("APP_NAME", "app")
 
-PROJECT_NAME = os.environ.get('PROJECT_NAME', 'project')
-APP_NAME = os.environ.get('APP_NAME', 'app')
-
-if platform.system() == 'Windows':
+if platform.system() == "Windows":
     DEFAULT_ROOT_PATH = f"C:"
 else:
     DEFAULT_ROOT_PATH = f"/tmp"
 
-PROFILE_ROOT_PATH = os.environ.get('PROFILE_ROOT_PATH',
+PROFILE_ROOT_PATH = os.environ.get("PROFILE_ROOT_PATH",
                                    f"{DEFAULT_ROOT_PATH}/{PROJECT_NAME}/pp")
 LOG_FILE_PATH = os.environ.get(
-    'LOG_FILE_PATH',
+    "LOG_FILE_PATH",
     f"{DEFAULT_ROOT_PATH}/{PROJECT_NAME}/trace/{APP_NAME}.log")
 
-__all__.extend(['PROJECT_NAME', 'APP_NAME'])
+__all__.extend(["PROJECT_NAME", "APP_NAME"])
 
 
 def cprofile_print_stats(max_call_num: int = 1,
@@ -354,8 +353,7 @@ def cprofile_print_stats(max_call_num: int = 1,
             call_num = int(r.get(key))
             if call_num > max_call_num or (call_num - 1) % step != 0:
                 return func(*args, **kwargs)
-            print_title = (' ' * 30 +
-                           f'-*-cprofile_print_stats-*-|{call_num}')
+            print_title = (' ' * 30 + f"-*-cprofile_print_stats-*-|{call_num}")
 
             pr = cProfile.Profile()
             pr.enable()
@@ -384,7 +382,7 @@ def _pprofile_dump(prof: pprofile.Profile,
         name: str
         for name, lines in prof.iterSource():
             src_file = name
-            if name.startswith('./'):
+            if name.startswith("./"):
                 dst_file = f"{dir_path}{name[1:]}"
             else:
                 dst_file = f"{dir_path}{name}"
@@ -397,7 +395,7 @@ def _pprofile_dump(prof: pprofile.Profile,
     if need_rmtree:
         shutil.rmtree(dir_path, ignore_errors=True)
     os.makedirs(dir_path, exist_ok=True)
-    with io.open(file_path, 'w', errors='replace') as fp:
+    with io.open(file_path, 'w', errors="replace") as fp:
         prof.callgrind(fp, relative_path=True)
     _pprofile_copy_files()
 
@@ -420,8 +418,7 @@ def pprofile_dump_stats(max_call_num: int = 1, step: int = 1):
             call_num = int(r.get(key))
             if call_num > max_call_num or (call_num - 1) % step != 0:
                 return func(*args, **kwargs)
-            print_title = (' ' * 30 +
-                           f'-*-pprofile_print_stats-*-|{call_num}')
+            print_title = (' ' * 30 + f"-*-pprofile_print_stats-*-|{call_num}")
 
             prof = pprofile.Profile()
             with prof():
@@ -459,7 +456,7 @@ def pprofile_dump_statistical_stats(max_call_num: int = 1, step: int = 1):
                 return func(*args, **kwargs)
             print_title = (
                 ' ' * 30 +
-                f'-*-pprofile_print_statistical_stats-*-|{call_num}')
+                f"-*-pprofile_print_statistical_stats-*-|{call_num}")
 
             prof = pprofile.StatisticalProfile()
             with prof(period=0.001, single=True):
@@ -478,8 +475,8 @@ def pprofile_dump_statistical_stats(max_call_num: int = 1, step: int = 1):
 
 
 __all__.extend([
-    'cprofile_print_stats', 'pprofile_dump_stats',
-    'pprofile_dump_statistical_stats'
+    "cprofile_print_stats", "pprofile_dump_stats",
+    "pprofile_dump_statistical_stats"
 ])
 
 
@@ -494,8 +491,9 @@ def synchronized(lock):  # type: ignore
         return inner_wrapper
 
     return wrapper
-__all__.extend(['synchronized'])
 
+
+__all__.extend(["synchronized"])
 
 _g_singleton_type_lock = threading.RLock()
 
@@ -514,8 +512,9 @@ class Singleton(type):
         if cls not in cls._instances:
             cls._instances[cls] = super(Singleton,
                                         cls).__call__(*args, **kwargs)
-__all__.extend(['Singleton'])
 
+
+__all__.extend(["Singleton"])
 
 _g_singleton_actor_proxy_type_lock = threading.RLock()
 
@@ -531,7 +530,7 @@ class SingletonActorProxy(type):
                 return super(SingletonActorProxy,
                              cls).__call__(*args, **kwargs)
             cls._locked_call(*args, **kwargs)
-        return cls._instances[cls]['proxy']
+        return cls._instances[cls]["proxy"]
 
     @synchronized(_g_singleton_actor_proxy_type_lock)  # type: ignore
     def _locked_call(cls, *args, **kwargs):  # type: ignore
@@ -540,10 +539,12 @@ class SingletonActorProxy(type):
             instance = cls.start(*args, **kwargs)  # type: ignore
             cls._instance_creating = False
             cls._instances[cls] = {
-                'instance': instance,
-                'proxy': instance.proxy(),
+                "instance": instance,
+                "proxy": instance.proxy(),
             }
-__all__.extend(['SingletonActorProxy'])
+
+
+__all__.extend(["SingletonActorProxy"])
 
 
 def global_call_only_once(func):
@@ -560,87 +561,91 @@ def global_call_only_once(func):
         return instances[func]
 
     return wrapper
-__all__.extend(['global_call_only_once'])
+
+
+__all__.extend(["global_call_only_once"])
 
 
 def update_logging(log_file_path: str,
-                   log_level: str = 'DEBUG',
-                   expand_str: str = '') -> None:
+                   log_level: str = "DEBUG",
+                   expand_str: str = "") -> None:
     assert log_file_path
     LOG_LEVEL = {
-        '': 10,
-        'DEBUG': 10,
-        'INFO': 20,
-        'WARN': 30,
-        'ERROR': 40,
-        'FATAL': 50,
+        "": 10,
+        "DEBUG": 10,
+        "INFO": 20,
+        "WARN": 30,
+        "ERROR": 40,
+        "FATAL": 50,
     }[log_level]
 
     if '/' or '\\' in log_file_path:
         if not os.path.exists(os.path.dirname(log_file_path)):
             os.makedirs(os.path.dirname(log_file_path))
 
-    proc_name = os.environ['PROC_ID'] if os.environ.get(
-        'PROC_ID') else APP_NAME
-    default_format = ('%(asctime)s %(levelname)-7s %(name)-10s ' + proc_name +
-                      ' %(filename)-20s %(lineno)-4s ')
+    proc_name = os.environ["PROC_ID"] if os.environ.get(
+        "PROC_ID") else APP_NAME
+    default_format = ("%(asctime)s %(levelname)-7s %(name)-10s " + proc_name +
+                      " %(filename)-20s %(lineno)-4s ")
     default_format += expand_str
-    default_format += ' - %(message)s'
+    default_format += " - %(message)s"
 
     config = {
-        'version': 1,
-        'disable_existing_loggers': False,
-        'formatters': {
-            'default': {
-                'format': default_format,
+        "version": 1,
+        "disable_existing_loggers": False,
+        "formatters": {
+            "default": {
+                "format": default_format,
             },
         },
-        'handlers': {
-            'console': {
-                'class': 'logging.StreamHandler',
-                'level': LOG_LEVEL,
-                'formatter': 'default'
+        "handlers": {
+            "console": {
+                "class": "logging.StreamHandler",
+                "level": LOG_LEVEL,
+                "formatter": "default"
             },
-            'file': {
-                'class': 'logging.handlers.RotatingFileHandler',
-                'filename': log_file_path,
-                'level': LOG_LEVEL,
-                'formatter': 'default',
-                'maxBytes': 100 * 1024 * 1024,
-                'backupCount': 20,
+            "file": {
+                "class": "logging.handlers.RotatingFileHandler",
+                "filename": log_file_path,
+                "level": LOG_LEVEL,
+                "formatter": "default",
+                "maxBytes": 100 * 1024 * 1024,
+                "backupCount": 20,
             },
         },
-        'loggers': {
-            '': {
-                'handlers': ['console', 'file'],
-                'level': LOG_LEVEL,
+        "loggers": {
+            "": {
+                "handlers": ["console", "file"],
+                "level": LOG_LEVEL,
             },
         },
     }
 
     logging.config.dictConfig(config)
-    logging.getLogger('parso').setLevel(logging.ERROR)
-    logging.getLogger('asyncio').setLevel(logging.ERROR)
-    logging.getLogger('apscheduler').setLevel(logging.WARNING)
-    logging.getLogger('urllib3.connectionpool').setLevel(logging.INFO)
-    logging.getLogger('pika').setLevel(logging.WARNING)
-    logging.getLogger('pykka').setLevel(logging.WARNING)
-    logging.getLogger('redis').setLevel(logging.WARNING)
-    logging.getLogger('redis_lock').setLevel(logging.WARNING)
-__all__.extend(['update_logging'])
+    logging.getLogger("parso").setLevel(logging.ERROR)
+    logging.getLogger("asyncio").setLevel(logging.ERROR)
+    logging.getLogger("apscheduler").setLevel(logging.WARNING)
+    logging.getLogger("urllib3.connectionpool").setLevel(logging.INFO)
+    logging.getLogger("pika").setLevel(logging.WARNING)
+    logging.getLogger("pykka").setLevel(logging.WARNING)
+    logging.getLogger("redis").setLevel(logging.WARNING)
+    logging.getLogger("redis_lock").setLevel(logging.WARNING)
+
+
+__all__.extend(["update_logging"])
 
 
 @global_call_only_once
 def make_logger() -> logging.Logger:
     """ Make global logger """
     os.makedirs(os.path.dirname(LOG_FILE_PATH), exist_ok=True)
-    log_level: str = os.environ.get('LOGGING_LEVEL', 'DEBUG')
+    log_level: str = os.environ.get("LOGGING_LEVEL", "DEBUG")
     update_logging(LOG_FILE_PATH, log_level)
     return logging.getLogger(APP_NAME)
 
 
 LOGGER: logging.Logger = make_logger()
-__all__.extend(['LOGGER'])
+__all__.extend(["LOGGER"])
 
 
 class Promise:
@@ -794,20 +799,23 @@ def lru_cache_time(seconds, maxsize=None):
         return update_wrapper(partial(time_aware, ttl_hash), func)
 
     return wrapper
-__all__.extend(['lru_cache_time'])
+
+
+__all__.extend(["lru_cache_time"])
 
 
 def get_host_ip() -> str:
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.connect(('8.8.8.8', 80))
+        s.connect(("8.8.8.8", 80))
         ip = s.getsockname()[0]
     finally:
         s.close()
 
     return ip
-__all__.extend(['get_host_ip'])
 
+
+__all__.extend(["get_host_ip"])
 
 _g_redis_client: t.Optional[redis.Redis] = None
 
@@ -817,8 +825,10 @@ def get_redis_client() -> redis.Redis:
     """ Get the global redis client """
     global _g_redis_client
     _g_redis_client = redis.Redis.from_url(os.environ.get(
-        'REDIS_URI', "redis://127.0.0.1:6379/99"),
+        "REDIS_URI", "redis://127.0.0.1:6379/99"),
                                            decode_responses=True)
-    setattr(_g_redis_client, 'Lock', partial(redis_lock.Lock, _g_redis_client))
+    setattr(_g_redis_client, "Lock", partial(redis_lock.Lock, _g_redis_client))
     return _g_redis_client
-__all__.extend(['get_redis_client'])
+
+
+__all__.extend(["get_redis_client"])
