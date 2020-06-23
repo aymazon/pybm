@@ -8,7 +8,7 @@ import multiprocessing
 if platform.system() == "Linux":
     try:
         multiprocessing.set_start_method("forkserver")
-    except RuntimeError:
+    except (RuntimeError, ValueError):
         pass
 
 import typing as t
