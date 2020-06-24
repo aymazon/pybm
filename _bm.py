@@ -305,7 +305,7 @@ try:
 except ImportError:
     pass
 
-from mock import Mock, MagicMock, PropertyMock
+from mock.mock import Mock, MagicMock, PropertyMock
 
 from pytest_mock import MockFixture
 __all__.extend(["MockFixture"])
