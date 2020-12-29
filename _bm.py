@@ -72,15 +72,15 @@ __all__.extend([
     "Counter", "OrderedDict", "ChainMap"
 ])
 
-from pyrsistent import pmap, m as pm, PMap, pvector, v as pv, PVector, pset, s as ps, PSet, pbag, b as pb, PBag, plist, l as pl, PList, pdeque, dq as pdq, PDeque, CheckedPMap, CheckedPVector, CheckedPSet, InvariantException, CheckedKeyTypeError, CheckedValueTypeError, CheckedType, optional, PRecord, field as pfield, pset_field, pmap_field, pvector_field, PClass, PClassMeta, immutable, freeze, thaw, mutant, get_in, inc, discard, rex, ny  # type: ignore
+from pyrsistent import pmap, m as pm, PMap, pvector, v as pv, PVector, pset, s as ps, PSet, pbag, b as pb, PBag, plist, l as pl, PList, pdeque, dq as pdq, PDeque, CheckedPMap, CheckedPVector, CheckedPSet, InvariantException, PTypeError, CheckedKeyTypeError, CheckedValueTypeError, CheckedType, optional, PRecord, field as pfield, pset_field, pmap_field, pvector_field, PClass, PClassMeta, immutable, freeze, thaw, mutant, get_in, inc, discard, rex, ny  # type: ignore
 __all__.extend([
     "pmap", "pm", "PMap", "pvector", "pv", "PVector", "pset", "ps", "PSet",
     "pbag", "pb", "PBag", "plist", "pl", "PList", "pdeque", "pdq", "PDeque",
     "CheckedPMap", "CheckedPVector", "CheckedPSet", "InvariantException",
-    "CheckedKeyTypeError", "CheckedValueTypeError", "CheckedType", "optional",
-    "PRecord", "pfield", "pset_field", "pmap_field", "pvector_field", "PClass",
-    "PClassMeta", "immutable", "freeze", "thaw", "mutant", "get_in", "inc",
-    "discard", "rex", "ny"
+    "PTypeError", "CheckedKeyTypeError", "CheckedValueTypeError",
+    "CheckedType", "optional", "PRecord", "pfield", "pset_field", "pmap_field",
+    "pvector_field", "PClass", "PClassMeta", "immutable", "freeze", "thaw",
+    "mutant", "get_in", "inc", "discard", "rex", "ny"
 ])
 
 from fn.monad import Option, Full, Empty, optionable
