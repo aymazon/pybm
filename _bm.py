@@ -358,11 +358,12 @@ def cprofile_print_stats(max_call_num: int = 1,
         r = get_redis_client()
         key = f"{PROJECT_NAME}.{APP_NAME}.cprofile_print_stats"
         with r.Lock(f"{key}-lock", expire=5):
-            key_num = r.get(key)
-            if key_num is None:
-                r.set(key, '0')
-            elif int(key_num) >= max_call_num:
-                r.set(key, '0')
+            # key_num = r.get(key)
+            # if key_num is None:
+            #     r.set(key, '0')
+            # elif int(key_num) >= max_call_num:
+            #     r.set(key, '0')
+            r.set(key, '0')
 
         @wraps(func)
         def inner_wrapper(*args, **kwargs):
@@ -425,11 +426,12 @@ def pprofile_dump_stats(max_call_num: int = 1, step: int = 1):
         r = get_redis_client()
         key = f"{PROJECT_NAME}.{APP_NAME}.pprofile_print_stats"
         with r.Lock(f"{key}-lock", expire=5):
-            key_num = r.get(key)
-            if key_num is None:
-                r.set(key, '0')
-            elif int(key_num) >= max_call_num:
-                r.set(key, '0')
+            # key_num = r.get(key)
+            # if key_num is None:
+            #     r.set(key, '0')
+            # elif int(key_num) >= max_call_num:
+            #     r.set(key, '0')
+            r.set(key, '0')
 
         @wraps(func)
         def inner_wrapper(*args, **kwargs):
@@ -461,11 +463,12 @@ def pprofile_dump_statistical_stats(max_call_num: int = 1, step: int = 1):
         r = get_redis_client()
         key = f"{PROJECT_NAME}.{APP_NAME}.pprofile_print_statistical_stats"
         with r.Lock(f"{key}-lock", expire=5):
-            key_num = r.get(key)
-            if key_num is None:
-                r.set(key, '0')
-            elif int(key_num) >= max_call_num:
-                r.set(key, '0')
+            # key_num = r.get(key)
+            # if key_num is None:
+            #     r.set(key, '0')
+            # elif int(key_num) >= max_call_num:
+            #     r.set(key, '0')
+            r.set(key, '0')
 
         @wraps(func)
         def inner_wrapper(*args, **kwargs):
