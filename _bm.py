@@ -15,6 +15,17 @@ import typing as t
 import pyrsistent.typing as tp
 JsonData = t.Dict[str, t.Any]
 __all__.extend(["t", "tp", "JsonData"])
+
+from typing import (  # noqa
+    Callable, Optional, NewType, Type, Any, NoReturn, Union, Tuple, Iterable,
+    List, Dict, Set, FrozenSet, NamedTuple, cast, overload, no_type_check,
+    no_type_check_decorator)
+__all__.extend([
+    "Callable", "Optional", "NewType", "Type", "Any", "NoReturn", "Union",
+    "Tuple", "Iterable", "List", "Dict", "Set", "FrozenSet", "NamedTuple",
+    "cast", "overload", "no_type_check", "no_type_check_decorator"
+])
+
 from abc import ABCMeta, abstractmethod
 __all__.extend(["ABCMeta", "abstractmethod"])
 
@@ -387,9 +398,11 @@ def _pprofile_dump(prof: pprofile.Profile,
     def _pprofile_copy_files() -> None:
         name: str
         for name, lines in prof.iterSource():
+            if not os.path.exists(name):
+                continue
             src_file = name
-            if name.startswith("./"):
-                dst_file = f"{dir_path}{name[1:]}"
+            if not name.startswith("/"):
+                dst_file = f"{dir_path}/{name}"
             else:
                 dst_file = f"{dir_path}{name}"
             dst_path = os.path.dirname(dst_file)
