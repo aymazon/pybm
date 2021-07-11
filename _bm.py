@@ -17,13 +17,11 @@ JsonData = t.Dict[str, t.Any]
 __all__.extend(["t", "tp", "JsonData"])
 
 from typing import (  # noqa
-    Callable, Optional, NewType, Type, Any, NoReturn, Union, Tuple, Iterable,
-    List, Dict, Set, FrozenSet, NamedTuple, cast, overload, no_type_check,
-    no_type_check_decorator)
+    Callable, Optional, NewType, Type, Any, NoReturn, Union, Tuple, Iterable, List, Dict, Set, FrozenSet, NamedTuple,
+    cast, overload, no_type_check, no_type_check_decorator)
 __all__.extend([
-    "Callable", "Optional", "NewType", "Type", "Any", "NoReturn", "Union",
-    "Tuple", "Iterable", "List", "Dict", "Set", "FrozenSet", "NamedTuple",
-    "cast", "overload", "no_type_check", "no_type_check_decorator"
+    "Callable", "Optional", "NewType", "Type", "Any", "NoReturn", "Union", "Tuple", "Iterable", "List", "Dict", "Set",
+    "FrozenSet", "NamedTuple", "cast", "overload", "no_type_check", "no_type_check_decorator"
 ])
 
 from abc import ABCMeta, abstractmethod
@@ -33,18 +31,14 @@ import string, os, sys, re, datetime, calendar, collections, heapq, bisect, arra
 import six, gevent, pykka, Pyro4, celery, redis, mock, cffi, cython, cython as cy, ipdb, psutil, requests, redis_lock
 
 __all__.extend([
-    "string", "os", "sys", "re", "datetime", "calendar", "collections",
-    "heapq", "bisect", "array", "types", "copy", "enum", "decimal", "random",
-    "glob", "shutil", "pickle", "sqlite3", "zlib", "gzip", "bz2", "zipfile",
-    "tarfile", "csv", "configparser", "hashlib", "io", "time", "argparse",
-    "logging", "platform", "ctypes", "threading", "multiprocessing",
-    "subprocess", "queue", "socket", "asyncio", "signal", "mmap", "json",
-    "base64", "binhex", "binascii", "html", "xml", "webbrowser", "urllib",
-    "http", "ftplib", "poplib", "imaplib", "nntplib", "smtplib", "telnetlib",
-    "uuid", "socketserver", "xmlrpc", "ipaddress", "gettext", "locale", "cmd",
-    "doctest", "unittest", "warnings", "abc", "gc", "inspect", "traceback",
-    "importlib", "math", "six", "gevent", "pykka", "Pyro4", "celery", "redis",
-    "redis_lock", "mock", "cffi", "cython", "cy", "ipdb", "psutil", "requests"
+    "string", "os", "sys", "re", "datetime", "calendar", "collections", "heapq", "bisect", "array", "types", "copy",
+    "enum", "decimal", "random", "glob", "shutil", "pickle", "sqlite3", "zlib", "gzip", "bz2", "zipfile", "tarfile",
+    "csv", "configparser", "hashlib", "io", "time", "argparse", "logging", "platform", "ctypes", "threading",
+    "multiprocessing", "subprocess", "queue", "socket", "asyncio", "signal", "mmap", "json", "base64", "binhex",
+    "binascii", "html", "xml", "webbrowser", "urllib", "http", "ftplib", "poplib", "imaplib", "nntplib", "smtplib",
+    "telnetlib", "uuid", "socketserver", "xmlrpc", "ipaddress", "gettext", "locale", "cmd", "doctest", "unittest",
+    "warnings", "abc", "gc", "inspect", "traceback", "importlib", "math", "six", "gevent", "pykka", "Pyro4", "celery",
+    "redis", "redis_lock", "mock", "cffi", "cython", "cy", "ipdb", "psutil", "requests"
 ])
 
 try:
@@ -55,45 +49,37 @@ except ImportError:
 
 from functools import update_wrapper, wraps, WRAPPER_ASSIGNMENTS, WRAPPER_UPDATES, total_ordering, cmp_to_key, lru_cache, reduce, partial, partialmethod, singledispatch
 __all__.extend([
-    "update_wrapper", "wraps", "WRAPPER_ASSIGNMENTS", "WRAPPER_UPDATES",
-    "total_ordering", "cmp_to_key", "lru_cache", "reduce", "partial",
-    "partialmethod", "singledispatch"
+    "update_wrapper", "wraps", "WRAPPER_ASSIGNMENTS", "WRAPPER_UPDATES", "total_ordering", "cmp_to_key", "lru_cache",
+    "reduce", "partial", "partialmethod", "singledispatch"
 ])
 
 from operator import abs, add, and_, attrgetter, concat, contains, countOf, delitem, eq, floordiv, ge, getitem, gt, iadd, iand, iconcat, ifloordiv, ilshift, imatmul, imod, imul, index, indexOf, inv, invert, ior, ipow, irshift, is_, is_not, isub, itemgetter, itruediv, ixor, le, length_hint, lshift, lt, matmul, methodcaller, mod, mul, ne, neg, not_, or_, pos, pow, rshift, setitem, sub, truediv, truth, xor
 __all__.extend([
-    "abs", "add", "and_", "attrgetter", "concat", "contains", "countOf",
-    "delitem", "eq", "floordiv", "ge", "getitem", "gt", "iadd", "iand",
-    "iconcat", "ifloordiv", "ilshift", "imatmul", "imod", "imul", "index",
-    "indexOf", "inv", "invert", "ior", "ipow", "irshift", "is_", "is_not",
-    "isub", "itemgetter", "itruediv", "ixor", "le", "length_hint", "lshift",
-    "lt", "matmul", "methodcaller", "mod", "mul", "ne", "neg", "not_", "or_",
-    "pos", "pow", "rshift", "setitem", "sub", "truediv", "truth", "xor"
+    "abs", "add", "and_", "attrgetter", "concat", "contains", "countOf", "delitem", "eq", "floordiv", "ge", "getitem",
+    "gt", "iadd", "iand", "iconcat", "ifloordiv", "ilshift", "imatmul", "imod", "imul", "index", "indexOf", "inv",
+    "invert", "ior", "ipow", "irshift", "is_", "is_not", "isub", "itemgetter", "itruediv", "ixor", "le", "length_hint",
+    "lshift", "lt", "matmul", "methodcaller", "mod", "mul", "ne", "neg", "not_", "or_", "pos", "pow", "rshift",
+    "setitem", "sub", "truediv", "truth", "xor"
 ])
 
 from itertools import count, cycle, repeat, accumulate, chain, compress, dropwhile, filterfalse, groupby, islice, starmap, takewhile, tee, zip_longest, product, permutations, combinations, combinations_with_replacement
 __all__.extend([
-    "count", "cycle", "repeat", "accumulate", "chain", "compress", "dropwhile",
-    "filterfalse", "groupby", "islice", "starmap", "takewhile", "tee",
-    "zip_longest", "product", "permutations", "combinations",
+    "count", "cycle", "repeat", "accumulate", "chain", "compress", "dropwhile", "filterfalse", "groupby", "islice",
+    "starmap", "takewhile", "tee", "zip_longest", "product", "permutations", "combinations",
     "combinations_with_replacement"
 ])
 
 from collections import deque, defaultdict, namedtuple, UserDict, UserList, UserString, Counter, OrderedDict, ChainMap
-__all__.extend([
-    "deque", "defaultdict", "namedtuple", "UserDict", "UserList", "UserString",
-    "Counter", "OrderedDict", "ChainMap"
-])
+__all__.extend(
+    ["deque", "defaultdict", "namedtuple", "UserDict", "UserList", "UserString", "Counter", "OrderedDict", "ChainMap"])
 
 from pyrsistent import pmap, m as pm, PMap, pvector, v as pv, PVector, pset, s as ps, PSet, pbag, b as pb, PBag, plist, l as pl, PList, pdeque, dq as pdq, PDeque, CheckedPMap, CheckedPVector, CheckedPSet, InvariantException, PTypeError, CheckedKeyTypeError, CheckedValueTypeError, CheckedType, optional, PRecord, field as pfield, pset_field, pmap_field, pvector_field, PClass, PClassMeta, immutable, freeze, thaw, mutant, get_in, inc, discard, rex, ny  # type: ignore
 __all__.extend([
-    "pmap", "pm", "PMap", "pvector", "pv", "PVector", "pset", "ps", "PSet",
-    "pbag", "pb", "PBag", "plist", "pl", "PList", "pdeque", "pdq", "PDeque",
-    "CheckedPMap", "CheckedPVector", "CheckedPSet", "InvariantException",
-    "PTypeError", "CheckedKeyTypeError", "CheckedValueTypeError",
-    "CheckedType", "optional", "PRecord", "pfield", "pset_field", "pmap_field",
-    "pvector_field", "PClass", "PClassMeta", "immutable", "freeze", "thaw",
-    "mutant", "get_in", "inc", "discard", "rex", "ny"
+    "pmap", "pm", "PMap", "pvector", "pv", "PVector", "pset", "ps", "PSet", "pbag", "pb", "PBag", "plist", "pl",
+    "PList", "pdeque", "pdq", "PDeque", "CheckedPMap", "CheckedPVector", "CheckedPSet", "InvariantException",
+    "PTypeError", "CheckedKeyTypeError", "CheckedValueTypeError", "CheckedType", "optional", "PRecord", "pfield",
+    "pset_field", "pmap_field", "pvector_field", "PClass", "PClassMeta", "immutable", "freeze", "thaw", "mutant",
+    "get_in", "inc", "discard", "rex", "ny"
 ])
 
 from fn.monad import Option, Full, Empty, optionable
@@ -104,10 +90,9 @@ from fn.iters import padnone, ncycles, repeatfunc, consume
 from fn.iters import partition as splitin, splitat, splitby
 from fn.iters import powerset, pairwise, iter_except, flatten
 __all__.extend([
-    "Option", "Full", "Empty", "optionable", "apply", "call", "zipwith",
-    "foldl", "foldr", "unfold", "Stream", "tco", "padnone", "ncycles",
-    "repeatfunc", "consume", "splitin", "splitat", "splitby", "powerset",
-    "pairwise", "iter_except", "flatten"
+    "Option", "Full", "Empty", "optionable", "apply", "call", "zipwith", "foldl", "foldr", "unfold", "Stream", "tco",
+    "padnone", "ncycles", "repeatfunc", "consume", "splitin", "splitat", "splitby", "powerset", "pairwise",
+    "iter_except", "flatten"
 ])
 
 from toolz import remove, accumulate, groupby, merge_sorted, interleave, unique, isiterable, isdistinct, take, drop, take_nth, first, second, nth, last, get, concat, concatv, mapcat, cons, interpose, frequencies, reduceby, iterate, sliding_window, partition, partition_all, count as count_seq, pluck, join, tail, diff, topk, peek, peekn, random_sample, identity, apply, thread_first, thread_last, memoize, compose, compose_left, pipe, complement, juxt, do, curry, excepts, merge, merge_with, valmap, keymap, itemmap, valfilter, keyfilter, itemfilter, assoc, dissoc, assoc_in, update_in, get_in, countby, partitionby, comp, curried as c  # type: ignore
@@ -136,17 +121,13 @@ c.splitby = curry(splitby)
 c.iter_except = curry(iter_except)
 
 __all__.extend([
-    "remove", "accumulate", "groupby", "merge_sorted", "interleave", "unique",
-    "isiterable", "isdistinct", "take", "drop", "take_nth", "first", "second",
-    "nth", "last", "get", "concat", "concatv", "mapcat", "cons", "interpose",
-    "frequencies", "reduceby", "iterate", "sliding_window", "partition",
-    "partition_all", "count_seq", "pluck", "join", "tail", "diff", "topk",
-    "peek", "peekn", "random_sample", "identity", "apply", "thread_first",
-    "thread_last", "memoize", "compose", "compose_left", "pipe", "complement",
-    "juxt", "do", "curry", "excepts", "merge", "merge_with", "valmap",
-    "keymap", "itemmap", "valfilter", "keyfilter", "itemfilter", "assoc",
-    "dissoc", "assoc_in", "update_in", "get_in", "countby", "partitionby",
-    "comp", "c", "co", "EqualityHashKey", "unzip"
+    "remove", "accumulate", "groupby", "merge_sorted", "interleave", "unique", "isiterable", "isdistinct", "take",
+    "drop", "take_nth", "first", "second", "nth", "last", "get", "concat", "concatv", "mapcat", "cons", "interpose",
+    "frequencies", "reduceby", "iterate", "sliding_window", "partition", "partition_all", "count_seq", "pluck", "join",
+    "tail", "diff", "topk", "peek", "peekn", "random_sample", "identity", "apply", "thread_first", "thread_last",
+    "memoize", "compose", "compose_left", "pipe", "complement", "juxt", "do", "curry", "excepts", "merge", "merge_with",
+    "valmap", "keymap", "itemmap", "valfilter", "keyfilter", "itemfilter", "assoc", "dissoc", "assoc_in", "update_in",
+    "get_in", "countby", "partitionby", "comp", "c", "co", "EqualityHashKey", "unzip"
 ])
 
 PY35 = sys.version_info[0] == 3 and sys.version_info[1] == 5
@@ -155,9 +136,8 @@ PY37 = sys.version_info[0] == 3 and sys.version_info[1] == 7
 PY38 = sys.version_info[0] == 3 and sys.version_info[1] == 8
 from toolz.compatibility import map, filter, range, zip, reduce, zip_longest, iteritems, iterkeys, itervalues, filterfalse, PY3, PY34, PYPY  # type: ignore
 __all__.extend([
-    "map", "filter", "range", "zip", "reduce", "zip_longest", "iteritems",
-    "iterkeys", "itervalues", "filterfalse", "PY3", "PY34", "PY35", "PY36",
-    "PY37", "PY38", "PYPY"
+    "map", "filter", "range", "zip", "reduce", "zip_longest", "iteritems", "iterkeys", "itervalues", "filterfalse",
+    "PY3", "PY34", "PY35", "PY36", "PY37", "PY38", "PYPY"
 ])
 
 try:
@@ -166,35 +146,27 @@ try:
 except ImportError:
     pass
 
-from functoolsex import flip, F, FF, X, op_filter, op_map, op_or_else, op_or_call, op_get_or, op_get_or_call, R, fold, is_none, is_not_none, is_option_full, is_option_empty, uppack_args, combinations_with_replacement, compress, every, first_object, first_option_full, first_pred_object, first_true, getter, laccumulate, lchain, lcombinations, lcombinations_with_replacement, lcompact, lcompress, lconcat, lconcatv, lcons, lcycle, ldiff, ldrop, ldropwhile, lfilter, lfilterfalse, lflatten, lgrouper, linterleave, linterpose, lislice, liter_except, lmap, lmapcat, lmerge_sorted, lncycles, lpairwise, lpartition, lpartition_all, lpermutations, lpluck, ljoin, lpowerset, lproduct, lrandom_sample, lpartitionby, lrange, lreject, lremove, lrepeat, lrepeatfunc, lrest, lroundrobin, lsliding_window, lsplitat, lsplitby, lsplitin, lstarmap, ltail, ltake, ltake_nth, ltakewhile, ltee, ltopk, lunique, lzip, lzip_longest, taccumulate, tchain, tcombinations, tcombinations_with_replacement, tcompact, tcompress, tconcat, tconcatv, tcons, tcycle, tdiff, tdrop, tdropwhile, tfilter, tfilterfalse, tflatten, tgrouper, tinterleave, tinterpose, tislice, titer_except, tmap, tmapcat, tmerge_sorted, tncycles, tpairwise, tpartition, tpartition_all, tpermutations, tpluck, tjoin, tpowerset, tproduct, trandom_sample, tpartitionby, trange, treject, tremove, trepeat, trepeatfunc, trest, troundrobin, tsliding_window, tsplitat, tsplitby, tsplitin, tstarmap, ttail, ttake, ttake_nth, ttakewhile, ttee, ttopk, tunique, tzip, tzip_longest, some, tco_yield  # type: ignore
+from functoolsex import flip, F, FF, X, op_filter, op_map, op_or_else, op_or_call, op_get_or, op_get_or_call, e_filter, e_left, e_right, e_is_left, e_is_right, e_map, e_or_else, e_or_call, e_get_or, e_get_or_call, e_get_or_raise, e_get_left, e_get_right, R, fold, is_none, is_not_none, is_option_full, is_option_empty, uppack_args, combinations_with_replacement, compress, every, first_object, first_option_full, first_pred_object, first_true, getter, laccumulate, lchain, lcombinations, lcombinations_with_replacement, lcompact, lcompress, lconcat, lconcatv, lcons, lcycle, ldiff, ldrop, ldropwhile, lfilter, lfilterfalse, lflatten, lgrouper, linterleave, linterpose, lislice, liter_except, lmap, lmapcat, lmerge_sorted, lncycles, lpairwise, lpartition, lpartition_all, lpermutations, lpluck, ljoin, lpowerset, lproduct, lrandom_sample, lpartitionby, lrange, lreject, lremove, lrepeat, lrepeatfunc, lrest, lroundrobin, lsliding_window, lsplitat, lsplitby, lsplitin, lstarmap, ltail, ltake, ltake_nth, ltakewhile, ltee, ltopk, lunique, lzip, lzip_longest, taccumulate, tchain, tcombinations, tcombinations_with_replacement, tcompact, tcompress, tconcat, tconcatv, tcons, tcycle, tdiff, tdrop, tdropwhile, tfilter, tfilterfalse, tflatten, tgrouper, tinterleave, tinterpose, tislice, titer_except, tmap, tmapcat, tmerge_sorted, tncycles, tpairwise, tpartition, tpartition_all, tpermutations, tpluck, tjoin, tpowerset, tproduct, trandom_sample, tpartitionby, trange, treject, tremove, trepeat, trepeatfunc, trest, troundrobin, tsliding_window, tsplitat, tsplitby, tsplitin, tstarmap, ttail, ttake, ttake_nth, ttakewhile, ttee, ttopk, tunique, tzip, tzip_longest, some, tco_yield  # type: ignore
 
 __all__.extend([
-    "flip", "F", "FF", "X", "R", "fold", "op_filter", "op_map", "op_or_else",
-    "op_or_call", "op_get_or", "op_get_or_call", "is_none", "is_not_none",
-    "is_option_full", "is_option_empty", "uppack_args",
-    "combinations_with_replacement", "compress", "every", "first_object",
-    "first_option_full", "first_pred_object", "first_true", "getter",
-    "laccumulate", "lchain", "lcombinations", "lcombinations_with_replacement",
-    "lcompact", "lcompress", "lconcat", "lconcatv", "lcons", "lcycle", "ldiff",
-    "ldrop", "ldropwhile", "lfilter", "lfilterfalse", "lflatten", "lgrouper",
-    "linterleave", "linterpose", "lislice", "liter_except", "lmap", "lmapcat",
-    "lmerge_sorted", "lncycles", "lpairwise", "lpartition", "lpartition_all",
-    "lpermutations", "lpluck", "ljoin", "lpowerset", "lproduct",
-    "lrandom_sample", "lpartitionby", "lrange", "lreject", "lremove",
-    "lrepeat", "lrepeatfunc", "lrest", "lroundrobin", "lsliding_window",
-    "lsplitat", "lsplitby", "lsplitin", "lstarmap", "ltail", "ltake",
-    "ltake_nth", "ltakewhile", "ltee", "ltopk", "lunique", "lzip",
-    "lzip_longest", "taccumulate", "tchain", "tcombinations",
-    "tcombinations_with_replacement", "tcompact", "tcompress", "tconcat",
-    "tconcatv", "tcons", "tcycle", "tdiff", "tdrop", "tdropwhile", "tfilter",
-    "tfilterfalse", "tflatten", "tgrouper", "tinterleave", "tinterpose",
-    "tislice", "titer_except", "tmap", "tmapcat", "tmerge_sorted", "tncycles",
-    "tpairwise", "tpartition", "tpartition_all", "tpermutations", "tpluck",
-    "tjoin", "tpowerset", "tproduct", "trandom_sample", "tpartitionby",
-    "trange", "treject", "tremove", "trepeat", "trepeatfunc", "trest",
-    "troundrobin", "tsliding_window", "tsplitat", "tsplitby", "tsplitin",
-    "tstarmap", "ttail", "ttake", "ttake_nth", "ttakewhile", "ttee", "ttopk",
-    "tunique", "tzip", "tzip_longest", "some", "tco_yield"
+    "flip", "F", "FF", "X", "R", "fold", "op_filter", "op_map", "op_or_else", "op_or_call", "op_get_or",
+    "op_get_or_call", "e_filter", "e_left", "e_right", "e_is_left", "e_is_right", "e_map", "e_or_else", "e_or_call",
+    "e_get_or", "e_get_or_call", "e_get_or_raise", "e_get_left", "e_get_right", "is_none", "is_not_none",
+    "is_option_full", "is_option_empty", "uppack_args", "combinations_with_replacement", "compress", "every",
+    "first_object", "first_option_full", "first_pred_object", "first_true", "getter", "laccumulate", "lchain",
+    "lcombinations", "lcombinations_with_replacement", "lcompact", "lcompress", "lconcat", "lconcatv", "lcons",
+    "lcycle", "ldiff", "ldrop", "ldropwhile", "lfilter", "lfilterfalse", "lflatten", "lgrouper", "linterleave",
+    "linterpose", "lislice", "liter_except", "lmap", "lmapcat", "lmerge_sorted", "lncycles", "lpairwise", "lpartition",
+    "lpartition_all", "lpermutations", "lpluck", "ljoin", "lpowerset", "lproduct", "lrandom_sample", "lpartitionby",
+    "lrange", "lreject", "lremove", "lrepeat", "lrepeatfunc", "lrest", "lroundrobin", "lsliding_window", "lsplitat",
+    "lsplitby", "lsplitin", "lstarmap", "ltail", "ltake", "ltake_nth", "ltakewhile", "ltee", "ltopk", "lunique", "lzip",
+    "lzip_longest", "taccumulate", "tchain", "tcombinations", "tcombinations_with_replacement", "tcompact", "tcompress",
+    "tconcat", "tconcatv", "tcons", "tcycle", "tdiff", "tdrop", "tdropwhile", "tfilter", "tfilterfalse", "tflatten",
+    "tgrouper", "tinterleave", "tinterpose", "tislice", "titer_except", "tmap", "tmapcat", "tmerge_sorted", "tncycles",
+    "tpairwise", "tpartition", "tpartition_all", "tpermutations", "tpluck", "tjoin", "tpowerset", "tproduct",
+    "trandom_sample", "tpartitionby", "trange", "treject", "tremove", "trepeat", "trepeatfunc", "trest", "troundrobin",
+    "tsliding_window", "tsplitat", "tsplitby", "tsplitin", "tstarmap", "ttail", "ttake", "ttake_nth", "ttakewhile",
+    "ttee", "ttopk", "tunique", "tzip", "tzip_longest", "some", "tco_yield"
 ])
 
 c.uppack_args = curry(uppack_args)
@@ -338,18 +310,13 @@ if platform.system() == "Windows":
 else:
     DEFAULT_ROOT_PATH = f"/tmp"
 
-PROFILE_ROOT_PATH = os.environ.get("PROFILE_ROOT_PATH",
-                                   f"{DEFAULT_ROOT_PATH}/{PROJECT_NAME}/pp")
-LOG_FILE_PATH = os.environ.get(
-    "LOG_FILE_PATH",
-    f"{DEFAULT_ROOT_PATH}/{PROJECT_NAME}/trace/{APP_NAME}.log")
+PROFILE_ROOT_PATH = os.environ.get("PROFILE_ROOT_PATH", f"{DEFAULT_ROOT_PATH}/{PROJECT_NAME}/pp")
+LOG_FILE_PATH = os.environ.get("LOG_FILE_PATH", f"{DEFAULT_ROOT_PATH}/{PROJECT_NAME}/trace/{APP_NAME}.log")
 
 __all__.extend(["PROJECT_NAME", "APP_NAME"])
 
 
-def cprofile_print_stats(max_call_num: int = 1,
-                         step: int = 1,
-                         sort_key: int = 2):
+def cprofile_print_stats(max_call_num: int = 1, step: int = 1, sort_key: int = 2):
     """ cprofile print stats
     Args:
         sort_key: {-1: "stdname", 0: "calls", 1: "time", 2: "cumulative"}
@@ -393,9 +360,7 @@ def cprofile_print_stats(max_call_num: int = 1,
     return wrapper
 
 
-def _pprofile_dump(prof: pprofile.Profile,
-                   file_path: str,
-                   need_rmtree=True) -> None:
+def _pprofile_dump(prof: pprofile.Profile, file_path: str, need_rmtree=True) -> None:
     def _pprofile_copy_files() -> None:
         name: str
         for name, lines in prof.iterSource():
@@ -448,8 +413,7 @@ def pprofile_dump_stats(max_call_num: int = 1, step: int = 1):
             print(print_title)
             print('-' * 100)
             print('')
-            _pprofile_dump(prof,
-                           f"{PROFILE_ROOT_PATH}/cachegrind.out.{call_num}")
+            _pprofile_dump(prof, f"{PROFILE_ROOT_PATH}/cachegrind.out.{call_num}")
             return result
 
         return inner_wrapper
@@ -476,9 +440,7 @@ def pprofile_dump_statistical_stats(max_call_num: int = 1, step: int = 1):
             call_num = int(r.get(key))
             if call_num > max_call_num or (call_num - 1) % step != 0:
                 return func(*args, **kwargs)
-            print_title = (
-                ' ' * 30 +
-                f"-*-pprofile_print_statistical_stats-*-|{call_num}")
+            print_title = (' ' * 30 + f"-*-pprofile_print_statistical_stats-*-|{call_num}")
 
             prof = pprofile.StatisticalProfile()
             with prof(period=0.001, single=True):
@@ -487,8 +449,7 @@ def pprofile_dump_statistical_stats(max_call_num: int = 1, step: int = 1):
             print(print_title)
             print('-' * 100)
             print('')
-            _pprofile_dump(prof,
-                           f"{PROFILE_ROOT_PATH}/cachegrind.out.{call_num}")
+            _pprofile_dump(prof, f"{PROFILE_ROOT_PATH}/cachegrind.out.{call_num}")
             return result
 
         return inner_wrapper
@@ -496,10 +457,7 @@ def pprofile_dump_statistical_stats(max_call_num: int = 1, step: int = 1):
     return wrapper
 
 
-__all__.extend([
-    "cprofile_print_stats", "pprofile_dump_stats",
-    "pprofile_dump_statistical_stats"
-])
+__all__.extend(["cprofile_print_stats", "pprofile_dump_stats", "pprofile_dump_statistical_stats"])
 
 
 def synchronized(lock):  # type: ignore
@@ -532,8 +490,7 @@ class Singleton(type):
     @synchronized(_g_singleton_type_lock)  # type: ignore
     def _locked_call(cls, *args, **kwargs):  # type: ignore
         if cls not in cls._instances:
-            cls._instances[cls] = super(Singleton,
-                                        cls).__call__(*args, **kwargs)
+            cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
 
 
 __all__.extend(["Singleton"])
@@ -549,8 +506,7 @@ class SingletonActorProxy(type):
     def __call__(cls, *args, **kwargs):  # type: ignore
         if cls not in cls._instances:
             if cls._instance_creating:
-                return super(SingletonActorProxy,
-                             cls).__call__(*args, **kwargs)
+                return super(SingletonActorProxy, cls).__call__(*args, **kwargs)
             cls._locked_call(*args, **kwargs)
         return cls._instances[cls]["proxy"]
 
@@ -588,9 +544,7 @@ def global_call_only_once(func):
 __all__.extend(["global_call_only_once"])
 
 
-def update_logging(log_file_path: str,
-                   log_level: str = "DEBUG",
-                   expand_str: str = "") -> None:
+def update_logging(log_file_path: str, log_level: str = "DEBUG", expand_str: str = "") -> None:
     assert log_file_path
     LOG_LEVEL = {
         "": 10,
@@ -605,10 +559,8 @@ def update_logging(log_file_path: str,
         if not os.path.exists(os.path.dirname(log_file_path)):
             os.makedirs(os.path.dirname(log_file_path))
 
-    proc_name = os.environ["PROC_ID"] if os.environ.get(
-        "PROC_ID") else APP_NAME
-    default_format = ("%(asctime)s %(levelname)-7s %(name)-10s " + proc_name +
-                      " %(filename)-20s %(lineno)-4s ")
+    proc_name = os.environ["PROC_ID"] if os.environ.get("PROC_ID") else APP_NAME
+    default_format = ("%(asctime)s %(levelname)-7s %(name)-10s " + proc_name + " %(filename)-20s %(lineno)-4s ")
     default_format += expand_str
     default_format += " - %(message)s"
 
@@ -702,8 +654,7 @@ def lazy(func, *resultclasses):
             self.__prepared = True
 
         def __reduce__(self):
-            return (_lazy_proxy_unpickle,
-                    (func, self.__args, self.__kw) + resultclasses)
+            return (_lazy_proxy_unpickle, (func, self.__args, self.__kw) + resultclasses)
 
         def __repr__(self):
             return repr(self.__cast())
@@ -721,8 +672,8 @@ def lazy(func, *resultclasses):
                         setattr(cls, method_name, meth)
             cls._delegate_bytes = bytes in resultclasses
             cls._delegate_text = str in resultclasses
-            assert not (cls._delegate_bytes and cls._delegate_text), (
-                "Cannot call lazy() with both bytes and text return types.")
+            assert not (cls._delegate_bytes
+                        and cls._delegate_text), ("Cannot call lazy() with both bytes and text return types.")
             if cls._delegate_text:
                 cls.__str__ = cls.__text_cast
             elif cls._delegate_bytes:
@@ -846,8 +797,7 @@ _g_redis_client: t.Optional[redis.Redis] = None
 def get_redis_client() -> redis.Redis:
     """ Get the global redis client """
     global _g_redis_client
-    _g_redis_client = redis.Redis.from_url(os.environ.get(
-        "REDIS_URI", "redis://127.0.0.1:6379/99"),
+    _g_redis_client = redis.Redis.from_url(os.environ.get("REDIS_URI", "redis://127.0.0.1:6379/99"),
                                            decode_responses=True)
     setattr(_g_redis_client, "Lock", partial(redis_lock.Lock, _g_redis_client))
     return _g_redis_client
