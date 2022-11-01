@@ -27,14 +27,14 @@ __all__.extend([
 from abc import ABCMeta, abstractmethod
 __all__.extend(["ABCMeta", "abstractmethod"])
 
-import string, os, sys, re, datetime, calendar, collections, heapq, bisect, array, types, copy, enum, decimal, random, glob, shutil, pickle, sqlite3, zlib, gzip, bz2, zipfile, tarfile, csv, configparser, hashlib, io, time, argparse, logging, logging.config, platform, ctypes, threading, multiprocessing, subprocess, queue, socket, asyncio, signal, mmap, json, base64, binhex, binascii, html, xml, webbrowser, urllib, http, ftplib, poplib, imaplib, nntplib, smtplib, telnetlib, uuid, socketserver, xmlrpc, ipaddress, gettext, locale, cmd, doctest, unittest, warnings, abc, gc, inspect, traceback, importlib, math
+import string, os, sys, re, datetime, calendar, collections, heapq, bisect, array, types, copy, enum, decimal, random, glob, shutil, pickle, sqlite3, zlib, gzip, bz2, zipfile, tarfile, csv, configparser, hashlib, io, time, argparse, logging, logging.config, platform, ctypes, threading, multiprocessing, subprocess, queue, socket, asyncio, signal, mmap, json, base64, binascii, html, xml, webbrowser, urllib, http, ftplib, poplib, imaplib, nntplib, smtplib, telnetlib, uuid, socketserver, xmlrpc, ipaddress, gettext, locale, cmd, doctest, unittest, warnings, abc, gc, inspect, traceback, importlib, math
 import six, gevent, pykka, Pyro4, celery, redis, mock, cffi, cython, cython as cy, ipdb, psutil, requests, redis_lock
 
 __all__.extend([
     "string", "os", "sys", "re", "datetime", "calendar", "collections", "heapq", "bisect", "array", "types", "copy",
     "enum", "decimal", "random", "glob", "shutil", "pickle", "sqlite3", "zlib", "gzip", "bz2", "zipfile", "tarfile",
     "csv", "configparser", "hashlib", "io", "time", "argparse", "logging", "platform", "ctypes", "threading",
-    "multiprocessing", "subprocess", "queue", "socket", "asyncio", "signal", "mmap", "json", "base64", "binhex",
+    "multiprocessing", "subprocess", "queue", "socket", "asyncio", "signal", "mmap", "json", "base64",
     "binascii", "html", "xml", "webbrowser", "urllib", "http", "ftplib", "poplib", "imaplib", "nntplib", "smtplib",
     "telnetlib", "uuid", "socketserver", "xmlrpc", "ipaddress", "gettext", "locale", "cmd", "doctest", "unittest",
     "warnings", "abc", "gc", "inspect", "traceback", "importlib", "math", "six", "gevent", "pykka", "Pyro4", "celery",
@@ -82,15 +82,14 @@ __all__.extend([
     "get_in", "inc", "discard", "rex", "ny"
 ])
 
-from fn.monad import Option, Full, Empty, optionable
-from fn.op import apply, call, zipwith, foldl, foldr, unfold
-from fn.stream import Stream
-from fn.recur import tco
-from fn.iters import padnone, ncycles, repeatfunc, consume
-from fn.iters import partition as splitin, splitat, splitby
-from fn.iters import powerset, pairwise, iter_except, flatten
+from functoolsex import apply, call, zipwith, foldl, foldr, unfold
+from functoolsex import tco
+from functoolsex import compact, reject, padnone, ncycles, repeatfunc, consume
+from functoolsex import splitin, splitat, splitby
+from functoolsex import powerset, pairwise, iter_except, flatten
 __all__.extend([
-    "Option", "Full", "Empty", "optionable", "apply", "call", "zipwith", "foldl", "foldr", "unfold", "Stream", "tco",
+    "apply", "call", "zipwith", "foldl", "foldr", "unfold", "tco",
+    "compact", "reject",
     "padnone", "ncycles", "repeatfunc", "consume", "splitin", "splitat", "splitby", "powerset", "pairwise",
     "iter_except", "flatten"
 ])
@@ -134,10 +133,13 @@ PY35 = sys.version_info[0] == 3 and sys.version_info[1] == 5
 PY36 = sys.version_info[0] == 3 and sys.version_info[1] == 6
 PY37 = sys.version_info[0] == 3 and sys.version_info[1] == 7
 PY38 = sys.version_info[0] == 3 and sys.version_info[1] == 8
+PY39 = sys.version_info[0] == 3 and sys.version_info[1] == 9
+PY310 = sys.version_info[0] == 3 and sys.version_info[1] == 10
+PY311 = sys.version_info[0] == 3 and sys.version_info[1] == 11
 from toolz.compatibility import map, filter, range, zip, reduce, zip_longest, iteritems, iterkeys, itervalues, filterfalse, PY3, PY34, PYPY  # type: ignore
 __all__.extend([
     "map", "filter", "range", "zip", "reduce", "zip_longest", "iteritems", "iterkeys", "itervalues", "filterfalse",
-    "PY3", "PY34", "PY35", "PY36", "PY37", "PY38", "PYPY"
+    "PY3", "PY34", "PY35", "PY36", "PY37", "PY38", "PY39", "PY310", "PY311", "PYPY"
 ])
 
 try:
@@ -146,14 +148,14 @@ try:
 except ImportError:
     pass
 
-from functoolsex import flip, P, C, F, FF, X, op_filter, op_map, op_or_else, op_or_call, op_get_or, op_get_or_call, e_filter, e_left, e_right, e_is_left, e_is_right, e_map, e_or_else, e_or_call, e_get_or, e_get_or_call, e_get_or_raise, e_get_left, e_get_right, R, fold, is_none, is_not_none, is_option_full, is_option_empty, uppack_args, log, combinations_with_replacement, compress, every, first_object, first_option_full, first_pred_object, first_true, getter, map_call, lmap_call, tmap_call, laccumulate, lchain, lcombinations, lcombinations_with_replacement, lcompact, lcompress, lconcat, lconcatv, lcons, lcycle, ldiff, ldrop, ldropwhile, lfilter, lfilterfalse, lflatten, lgrouper, linterleave, linterpose, lislice, liter_except, lmap, lmapcat, lmerge_sorted, lncycles, lpairwise, lpartition, lpartition_all, lpermutations, lpluck, ljoin, lpowerset, lproduct, lrandom_sample, lpartitionby, lrange, lreject, lremove, lrepeat, lrepeatfunc, lrest, lroundrobin, lsliding_window, lsplitat, lsplitby, lsplitin, lstarmap, ltail, ltake, ltake_nth, ltakewhile, ltee, ltopk, lunique, lzip, lzip_longest, taccumulate, tchain, tcombinations, tcombinations_with_replacement, tcompact, tcompress, tconcat, tconcatv, tcons, tcycle, tdiff, tdrop, tdropwhile, tfilter, tfilterfalse, tflatten, tgrouper, tinterleave, tinterpose, tislice, titer_except, tmap, tmapcat, tmerge_sorted, tncycles, tpairwise, tpartition, tpartition_all, tpermutations, tpluck, tjoin, tpowerset, tproduct, trandom_sample, tpartitionby, trange, treject, tremove, trepeat, trepeatfunc, trest, troundrobin, tsliding_window, tsplitat, tsplitby, tsplitin, tstarmap, ttail, ttake, ttake_nth, ttakewhile, ttee, ttopk, tunique, tzip, tzip_longest, some, tco_yield  # type: ignore
+from functoolsex import flip, P, C, F, FF, X, op_filter, op_map, op_or_else, op_or_call, op_get_or, op_get_or_call, e_filter, e_left, e_right, e_is_left, e_is_right, e_map, e_or_else, e_or_call, e_get_or, e_get_or_call, e_get_or_raise, e_get_left, e_get_right, R, fold, is_none, is_not_none, uppack_args, log, combinations_with_replacement, compress, every, first_object, first_pred_object, first_true, getter, map_call, lmap_call, tmap_call, laccumulate, lchain, lcombinations, lcombinations_with_replacement, lcompact, lcompress, lconcat, lconcatv, lcons, lcycle, ldiff, ldrop, ldropwhile, lfilter, lfilterfalse, lflatten, lgrouper, linterleave, linterpose, lislice, liter_except, lmap, lmapcat, lmerge_sorted, lncycles, lpairwise, lpartition, lpartition_all, lpermutations, lpluck, ljoin, lpowerset, lproduct, lrandom_sample, lpartitionby, lrange, lreject, lremove, lrepeat, lrepeatfunc, lrest, lroundrobin, lsliding_window, lsplitat, lsplitby, lsplitin, lstarmap, ltail, ltake, ltake_nth, ltakewhile, ltee, ltopk, lunique, lzip, lzip_longest, taccumulate, tchain, tcombinations, tcombinations_with_replacement, tcompact, tcompress, tconcat, tconcatv, tcons, tcycle, tdiff, tdrop, tdropwhile, tfilter, tfilterfalse, tflatten, tgrouper, tinterleave, tinterpose, tislice, titer_except, tmap, tmapcat, tmerge_sorted, tncycles, tpairwise, tpartition, tpartition_all, tpermutations, tpluck, tjoin, tpowerset, tproduct, trandom_sample, tpartitionby, trange, treject, tremove, trepeat, trepeatfunc, trest, troundrobin, tsliding_window, tsplitat, tsplitby, tsplitin, tstarmap, ttail, ttake, ttake_nth, ttakewhile, ttee, ttopk, tunique, tzip, tzip_longest, some, tco_yield  # type: ignore
 
 __all__.extend([
     "flip", "P", "C", "F", "FF", "X", "R", "fold", "op_filter", "op_map", "op_or_else", "op_or_call", "op_get_or",
     "op_get_or_call", "e_filter", "e_left", "e_right", "e_is_left", "e_is_right", "e_map", "e_or_else", "e_or_call",
     "e_get_or", "e_get_or_call", "e_get_or_raise", "e_get_left", "e_get_right", "is_none", "is_not_none",
-    "is_option_full", "is_option_empty", "uppack_args", "log", "combinations_with_replacement", "compress", "every",
-    "first_object", "first_option_full", "first_pred_object", "first_true", "getter", "map_call", "lmap_call",
+    "uppack_args", "log", "combinations_with_replacement", "compress", "every",
+    "first_object", "first_pred_object", "first_true", "getter", "map_call", "lmap_call",
     "tmap_call", "laccumulate", "lchain", "lcombinations", "lcombinations_with_replacement", "lcompact", "lcompress",
     "lconcat", "lconcatv", "lcons", "lcycle", "ldiff", "ldrop", "ldropwhile", "lfilter", "lfilterfalse", "lflatten",
     "lgrouper", "linterleave", "linterpose", "lislice", "liter_except", "lmap", "lmapcat", "lmerge_sorted", "lncycles",
@@ -283,16 +285,42 @@ except ImportError:
 
 try:
     import pandas as pd
-    pd.options.display.max_rows = 10
+    pd.options.display.max_rows = 20
+    pd.set_option('display.unicode.ambiguous_as_wide', True)
+    pd.set_option('display.unicode.east_asian_width', True)
+    pd.set_option('display.width', 180)
     __all__.extend(["pd"])
 except ImportError:
     pass
 
 try:
+    import matplotlib
+    matplotlib.rcParams['font.sans-serif'] = ['SimHei']
+    matplotlib.rcParams['font.family'] = 'sans-serif'
+    matplotlib.rcParams['axes.unicode_minus'] = False
     import matplotlib.pyplot as plt
     __all__.extend(["plt"])
 except ImportError:
     pass
+
+try:
+
+    import seaborn as sns
+    sns.set(context='notebook', style='whitegrid', rc={
+        'figure.dpi': 96, 'font.sans-serif': 'SimHei', 'axes.unicode_minus': False
+    })
+
+    def sns_countplot_by_col(df, *args, **kwargs):
+        if kwargs.get('x') is not None:
+            order_col = kwargs['x']
+        elif kwargs.get('y') is not None:
+            order_col = kwargs['y']
+        sns.countplot(df, order=df[order_col].value_counts().index, *args, **kwargs)
+
+    __all__.extend(["sns", "sns_countplot_by_col"])
+except ImportError:
+    pass
+
 
 from mock.mock import Mock, MagicMock, PropertyMock
 __all__.extend(["Mock", "MagicMock", "PropertyMock"])
@@ -608,6 +636,8 @@ def update_logging(log_file_path: str, log_level: str = "DEBUG", expand_str: str
     logging.getLogger("pykka").setLevel(logging.WARNING)
     logging.getLogger("redis").setLevel(logging.WARNING)
     logging.getLogger("redis_lock").setLevel(logging.WARNING)
+    logging.getLogger("matplotlib").setLevel(logging.WARNING)
+    logging.getLogger("PIL").setLevel(logging.WARNING)
 
 
 __all__.extend(["update_logging"])
