@@ -28,7 +28,8 @@ from abc import ABCMeta, abstractmethod
 __all__.extend(["ABCMeta", "abstractmethod"])
 
 import string, os, sys, re, datetime, calendar, collections, heapq, bisect, array, types, copy, enum, decimal, random, glob, shutil, pickle, sqlite3, zlib, gzip, bz2, zipfile, tarfile, csv, configparser, hashlib, io, time, argparse, logging, logging.config, platform, ctypes, threading, multiprocessing, subprocess, queue, socket, asyncio, signal, mmap, json, base64, binascii, html, xml, webbrowser, urllib, http, ftplib, poplib, imaplib, nntplib, smtplib, telnetlib, uuid, socketserver, xmlrpc, ipaddress, gettext, locale, cmd, doctest, unittest, warnings, abc, gc, inspect, traceback, importlib, math
-import six, gevent, pykka, Pyro4, celery, redis, mock, cffi, cython, cython as cy, ipdb, psutil, requests, redis_lock
+import six, gevent, pykka, Pyro4, celery, redis, cffi, cython, cython as cy, ipdb, psutil, requests, redis_lock
+from unittest import mock
 
 __all__.extend([
     "string", "os", "sys", "re", "datetime", "calendar", "collections", "heapq", "bisect", "array", "types", "copy",
@@ -322,7 +323,7 @@ except ImportError:
     pass
 
 
-from mock.mock import Mock, MagicMock, PropertyMock
+from unittest.mock import Mock, MagicMock, PropertyMock
 __all__.extend(["Mock", "MagicMock", "PropertyMock"])
 
 import pytest
